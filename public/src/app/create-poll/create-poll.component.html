@@ -1,0 +1,55 @@
+<a [routerLink]="['/dashboard']">Cancel</a>
+<h2>Put the question and options here:</h2>
+<form (submit)="createPoll()" #formData="ngForm">
+  <label>Question:</label>
+  <input type="text"
+  name="question"
+  required
+  minlength="8"
+  [(ngModel)]="newPoll.question"
+  #question="ngModel"
+  >
+  <span *ngIf="question.invalid && (question.dirty || question.touched)" class="errors">Question must be atleast 8 characters long</span>
+  <br>
+  <label>Option 1:</label>
+  <input type="text"
+  name="option1"
+  required
+  minlength="3"
+  [(ngModel)]="newPoll.option1"
+  #option1="ngModel"
+  >
+  <span *ngIf="option1.invalid && (option1.dirty || option1.touched)" class="errors">Options must be atleast 3 characters long</span>  
+  <br>
+  <label>Option 2:</label>
+  <input type="text"
+  name="option2"
+  required
+  minlength="3"
+  [(ngModel)]="newPoll.option2"
+  #option2="ngModel"
+  >
+  <span *ngIf="option2.invalid && (option2.dirty || option2.touched)" class="errors">Options must be atleast 3 characters long</span>  
+  <br>
+  <label>Option 3:</label>
+  <input type="text"
+  name="option3"
+  required
+  minlength="3"
+  [(ngModel)]="newPoll.option3"
+  #option3="ngModel"
+  >
+  <span *ngIf="option3.invalid && (option3.dirty || option3.touched)" class="errors">Options must be atleast 3 characters long</span>  
+  <br>
+  <label>Option 4:</label>
+  <input type="text"
+  name="option4"
+  required
+  minlength="3"
+  [(ngModel)]="newPoll.option4"
+  #option4="ngModel"
+  >
+  <span *ngIf="option4.invalid && (option4.dirty || option4.touched)" class="errors">Options must be atleast 3 characters long</span>  
+  <br>
+  <input type="submit" value="Create Poll" [disabled]="formData.invalid">
+</form>

@@ -1,0 +1,11 @@
+<form (submit)="login()">
+  <label>Your Name:</label>
+  <input type="text"
+  name="name"
+  required
+  [(ngModel)]="newUser.name"
+  #name="ngModel"
+  >
+  <input type="submit" value="Login" [disabled]="name.invalid">
+  <p *ngIf="name.invalid && (name.dirty || name.touched)" class="errors">Name is required.</p>
+</form>

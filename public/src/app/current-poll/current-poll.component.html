@@ -1,0 +1,30 @@
+<a [routerLink]="['/dashboard']">Go to Polls</a>
+<h1>{{currentPoll?.question}}</h1>
+<p>Click the Vote button to choose one. Feel free to vote multiple times!</p>
+<table>
+  <tr>
+    <th>Option</th>
+    <th>Current Count of Votes</th>
+    <th>Actions</th>
+  </tr>
+  <tr>
+    <td>{{currentPoll?.option1}}</td>
+    <td>{{currentPoll?.option1Votes}}</td>
+    <td><button (click)="vote(1)">Vote</button></td>
+  </tr>
+  <tr>
+    <td>{{currentPoll?.option2}}</td>
+    <td>{{currentPoll?.option2Votes}}</td>
+    <td><button (click)="vote(2)">Vote</button></td>
+  </tr>
+  <tr>
+    <td>{{currentPoll?.option3}}</td>
+    <td>{{currentPoll?.option3Votes}}</td>
+    <td><button (click)="vote(3)">Vote</button></td>
+  </tr>
+  <tr>
+    <td>{{currentPoll?.option4}}</td>
+    <td>{{currentPoll?.option4Votes}}</td>
+    <td><button (click)="vote(4)">Vote</button></td>
+  </tr>
+</table>
